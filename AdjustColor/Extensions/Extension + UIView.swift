@@ -6,3 +6,7 @@
 //
 
 import UIKit
+
+extension UIView {
+   // self.layer.cornerRadius = 20
+}

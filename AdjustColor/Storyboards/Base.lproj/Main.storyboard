@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="wNB-hv-4lI">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="FTg-1I-wGK">
@@ -30,7 +30,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979.38931297709917" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="1084" y="-35"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="ntS-vk-2Vb">
@@ -137,7 +137,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNB-LC-An1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNB-LC-An1" userLabel="SelectedColorView">
                                 <rect key="frame" x="16" y="79.000000000000014" width="398" height="184.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                             </view>
@@ -179,6 +179,7 @@
                         <outlet property="redSlider" destination="nZs-Qd-uAN" id="tl1-cL-RXJ"/>
                         <outlet property="redTextField" destination="xi6-u1-F8B" id="7ny-XN-S7p"/>
                         <outlet property="redValueLabel" destination="cfs-pD-N1F" id="WDe-DY-xmL"/>
+                        <outlet property="selectedColorView" destination="pNB-LC-An1" id="1ib-7O-MdM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nep-Eu-0T8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -188,6 +189,7 @@
         <!--Navigation Controller-->
         <scene sceneID="g2w-XH-Vp6">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kx9-RM-noM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aTj-z4-2Tw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="8an-Yc-PRj">
@@ -199,9 +201,8 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tx0-LP-ea9"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kx9-RM-noM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144" y="-35"/>
+            <point key="canvasLocation" x="271" y="-35"/>
         </scene>
     </scenes>
     <resources>
@@ -220,6 +221,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
