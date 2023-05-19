@@ -31,9 +31,7 @@ final class SettingsViewController: UIViewController {
         super.viewDidLoad()
         setDoneButtonForNumPad()
         setViewSettings()
-        redValueLabel.text = string(from: redSlider)
-        greenValueLabel.text = string(from: greenSlider)
-        blueValueLabel.text = string(from: blueSlider)
+        applyStringToAllValueLabels()
         receiveColor()
         
         
@@ -52,11 +50,6 @@ final class SettingsViewController: UIViewController {
         default:
             blueValueLabel.text = string(from: blueSlider)
         }
-        
-        
-        
-        
-        
     }
 
     // MARK: - Private methods
@@ -78,8 +71,9 @@ final class SettingsViewController: UIViewController {
         greenSlider.value = Float(receivedColor.green)
         blueSlider.value = Float(receivedColor.blue)
         
+        applyStringToAllValueLabels()
+        
     }
-    
     
     private func setColor() {
         selectedColorView.backgroundColor = UIColor(
@@ -91,5 +85,11 @@ final class SettingsViewController: UIViewController {
     
     private func string(from slider: UISlider) -> String {
         String(format: "%.2f", slider.value)
+    }
+    
+    private func applyStringToAllValueLabels() {
+        redValueLabel.text = string(from: redSlider)
+        greenValueLabel.text = string(from: greenSlider)
+        blueValueLabel.text = string(from: blueSlider)
     }
 }
