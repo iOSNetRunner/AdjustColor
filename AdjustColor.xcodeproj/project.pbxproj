@@ -16,6 +16,7 @@
 		601687852A178A24001753EF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601687842A178A24001753EF /* SettingsViewController.swift */; };
 		601687872A178A67001753EF /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601687862A178A67001753EF /* Extension + UIView.swift */; };
 		6046984E2A179D3800931086 /* Extension + UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6046984D2A179D3800931086 /* Extension + UITextField.swift */; };
+		604698522A18293400931086 /* Extension + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604698512A18293400931086 /* Extension + UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		601687842A178A24001753EF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		601687862A178A67001753EF /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 		6046984D2A179D3800931086 /* Extension + UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITextField.swift"; sourceTree = "<group>"; };
+		604698512A18293400931086 /* Extension + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				601687862A178A67001753EF /* Extension + UIView.swift */,
 				6046984D2A179D3800931086 /* Extension + UITextField.swift */,
+				604698512A18293400931086 /* Extension + UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				601687702A17887A001753EF /* MainViewController.swift in Sources */,
 				6046984E2A179D3800931086 /* Extension + UITextField.swift in Sources */,
 				601687872A178A67001753EF /* Extension + UIView.swift in Sources */,
+				604698522A18293400931086 /* Extension + UIColor.swift in Sources */,
 				6016876C2A17887A001753EF /* AppDelegate.swift in Sources */,
 				6016876E2A17887A001753EF /* SceneDelegate.swift in Sources */,
 				601687852A178A24001753EF /* SettingsViewController.swift in Sources */,

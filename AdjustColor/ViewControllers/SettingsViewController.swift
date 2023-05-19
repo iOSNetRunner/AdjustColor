@@ -29,8 +29,14 @@ final class SettingsViewController: UIViewController {
     // MARK: - Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupDoneButtonForTextFields()
+        setDoneButtonForNumPad()
         setViewSettings()
+        redValueLabel.text = string(from: redSlider)
+        greenValueLabel.text = string(from: greenSlider)
+        blueValueLabel.text = string(from: blueSlider)
+        receiveColor()
+        
+        
         
     }
     
@@ -38,14 +44,23 @@ final class SettingsViewController: UIViewController {
     @IBAction func sliderAction(_ sender: UISlider) {
         setColor()
         
-        redValueLabel.text = String(format: "%.2f", redSlider.value)
-        greenValueLabel.text = String(format: "%.2f", greenSlider.value)
-        blueValueLabel.text = String(format: "%.2f", blueSlider.value)
+        switch sender {
+        case redSlider:
+            redValueLabel.text = string(from: redSlider)
+        case greenSlider:
+            greenValueLabel.text = string(from: greenSlider)
+        default:
+            blueValueLabel.text = string(from: blueSlider)
+        }
+        
+        
+        
+        
         
     }
 
     // MARK: - Private methods
-    private func setupDoneButtonForTextFields() {
+    private func setDoneButtonForNumPad() {
         redTextField.addDoneButtonTo(textField: redTextField)
         greenTextField.addDoneButtonTo(textField: greenTextField)
         blueTextField.addDoneButtonTo(textField: blueTextField)
@@ -56,12 +71,25 @@ final class SettingsViewController: UIViewController {
         selectedColorView.backgroundColor = color
     }
     
-    private func setColor() {
+    private func receiveColor() {
+        let receivedColor = color.rgba
         
+        redSlider.value = Float(receivedColor.red)
+        greenSlider.value = Float(receivedColor.green)
+        blueSlider.value = Float(receivedColor.blue)
+        
+    }
+    
+    
+    private func setColor() {
         selectedColorView.backgroundColor = UIColor(
             red: CGFloat(redSlider.value),
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
             alpha: 1)
+    }
+    
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
     }
 }
