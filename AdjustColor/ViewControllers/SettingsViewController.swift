@@ -14,7 +14,7 @@ final class SettingsViewController: UIViewController {
     
     @IBOutlet var redValueLabel: UILabel!
     @IBOutlet var greenValueLabel: UILabel!
-    @IBOutlet var blueLabelLabel: UILabel!
+    @IBOutlet var blueValueLabel: UILabel!
     
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
@@ -31,6 +31,17 @@ final class SettingsViewController: UIViewController {
         super.viewDidLoad()
         setupDoneButtonForTextFields()
         setViewSettings()
+        
+    }
+    
+    //MARK: - IBActions
+    @IBAction func sliderAction(_ sender: UISlider) {
+        setColor()
+        
+        redValueLabel.text = String(format: "%.2f", redSlider.value)
+        greenValueLabel.text = String(format: "%.2f", greenSlider.value)
+        blueValueLabel.text = String(format: "%.2f", blueSlider.value)
+        
     }
 
     // MARK: - Private methods
@@ -45,6 +56,12 @@ final class SettingsViewController: UIViewController {
         selectedColorView.backgroundColor = color
     }
     
-    
-    
+    private func setColor() {
+        
+        selectedColorView.backgroundColor = UIColor(
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
+            alpha: 1)
+    }
 }
