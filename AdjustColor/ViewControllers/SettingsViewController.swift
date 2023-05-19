@@ -29,6 +29,7 @@ final class SettingsViewController: UIViewController {
     // MARK: - Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.setBottomColorToGradientBlack()
         setDoneButtonForNumPad()
         setViewSettings()
         receiveColor()
@@ -67,6 +68,10 @@ final class SettingsViewController: UIViewController {
     private func setViewSettings() {
         selectedColorView.layer.cornerRadius = 15
         selectedColorView.backgroundColor = color
+        selectedColorView.layer.shadowColor = UIColor.black.cgColor
+        selectedColorView.layer.shadowOpacity = 1
+        selectedColorView.layer.shadowRadius = 5
+        selectedColorView.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
     
     private func receiveColor() {

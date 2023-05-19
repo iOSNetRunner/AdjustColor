@@ -8,5 +8,12 @@
 import UIKit
 
 extension UIView {
-   // self.layer.cornerRadius = 20
+    func setBottomColorToGradientBlack() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor.clear.cgColor,
+                                UIColor.black.cgColor]
+        gradientLayer.frame = bounds
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
 }
+

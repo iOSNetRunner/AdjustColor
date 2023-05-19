@@ -12,8 +12,10 @@ final class MainViewController: UIViewController {
     //MARK: - Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.setBottomColorToGradientBlack()
     }
+    
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let settingsVC = segue.destination as? SettingsViewController else { return }
