@@ -142,10 +142,9 @@ extension SettingsViewController: UITextFieldDelegate {
         setColor()
         applyStringFormatToAllValueLabels()
         getValuesForTextFields()
-        
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }
 }

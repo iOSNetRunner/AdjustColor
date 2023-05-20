@@ -21,7 +21,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="wNB-hv-4lI">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="FTg-1I-wGK">
-                            <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
+                            <imageReference key="image" image="slider.horizontal.3" catalog="system" symbolScale="large" variableValue="0.0"/>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="xYY-gq-4v0" kind="presentation" modalPresentationStyle="fullScreen" id="uTB-sH-fzZ"/>
                             </connections>
@@ -219,7 +220,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.pencil" catalog="system" width="128" height="113"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
