@@ -161,7 +161,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="ToV-BD-Q2R" kind="unwind" unwindAction="unwindFor:" id="ouP-gN-oKV"/>
+                                    <action selector="DoneButtonTapped" destination="xYY-gq-4v0" eventType="touchUpInside" id="ekg-8Y-fh2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -196,7 +196,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nep-Eu-0T8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="ToV-BD-Q2R" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1876" y="-35"/>
         </scene>

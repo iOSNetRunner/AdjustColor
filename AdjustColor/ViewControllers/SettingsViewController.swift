@@ -27,7 +27,7 @@ final class SettingsViewController: UIViewController {
     
     // MARK: - Public properties
     var color: UIColor!
-    
+    unowned var delegate: SettingsViewControllerDelegate!
     
     // MARK: - Life cycle methods
     override func viewDidLoad() {
@@ -62,6 +62,13 @@ final class SettingsViewController: UIViewController {
             blueValueLabel.text = string(from: blueSlider)
         }
     }
+    
+    @IBAction func DoneButtonTapped() {
+        delegate.returnNewColor(selectedColorView.backgroundColor ?? .black)
+        dismiss(animated: true)
+    }
+    
+    
 
     // MARK: - Private methods
     private func setDoneButtonForNumPad() {
@@ -122,7 +129,6 @@ extension SettingsViewController: UITextFieldDelegate {
         case redTextField:
             redValueLabel.text = redTextField.text
             redSlider.value = numberValue
-            
         case greenTextField:
             greenValueLabel.text = greenTextField.text
             greenSlider.value = numberValue

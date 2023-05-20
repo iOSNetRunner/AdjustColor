@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SettingsViewControllerDelegate: AnyObject {
+    func returnNewColor(_ color: UIColor)
+}
+
 final class MainViewController: UIViewController {
     
     //MARK: - Life cycle methods
@@ -15,17 +19,17 @@ final class MainViewController: UIViewController {
         view.setBottomColorToGradientBlack()
     }
     
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let settingsVC = segue.destination as? SettingsViewController else { return }
         settingsVC.color = self.view.backgroundColor
+        settingsVC.delegate = self
     }
-        
-        @IBAction func unwind(for segue: UIStoryboardSegue) {
-            
-        }
-        
-    
 }
 
+// MARK: - SettingsViewControllerDelegate
+extension MainViewController: SettingsViewControllerDelegate {
+    func returnNewColor(_ color: UIColor) {
+        view.backgroundColor = color
+    }
+}
