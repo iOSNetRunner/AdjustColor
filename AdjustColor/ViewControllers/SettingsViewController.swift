@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 final class SettingsViewController: UIViewController {
     
     // MARK: - Public properties
@@ -26,6 +27,7 @@ final class SettingsViewController: UIViewController {
     
     var color: UIColor!
     
+    
     // MARK: - Life cycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,9 @@ final class SettingsViewController: UIViewController {
         receiveColor()
         applyStringFormatToAllValueLabels()
         getValuesForTextFields()
+        redTextField.delegate = self
+        greenTextField.delegate = self
+        blueTextField.delegate = self
         
         
         
@@ -104,5 +109,29 @@ final class SettingsViewController: UIViewController {
         redValueLabel.text = string(from: redSlider)
         greenValueLabel.text = string(from: greenSlider)
         blueValueLabel.text = string(from: blueSlider)
+    }
+}
+
+//MARK: - UITextField applying values
+extension SettingsViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        guard let enteredValue = textField.text else { return }
+        guard let numberValue = Float(textField.text ?? "0") else { return }
+        
+        switch textField {
+        case redTextField:
+            redValueLabel.text = redTextField.text
+            redSlider.value = numberValue
+            
+        case greenTextField:
+            greenValueLabel.text = greenTextField.text
+            greenSlider.value = numberValue
+        default:
+            blueValueLabel.text = blueTextField.text
+            blueSlider.value = numberValue
+        }
+        
+        setColor()
     }
 }
