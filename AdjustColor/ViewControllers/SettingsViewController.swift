@@ -75,7 +75,7 @@ final class SettingsViewController: UIViewController {
         selectedColorView.backgroundColor = color
         selectedColorView.layer.shadowColor = UIColor.black.cgColor
         selectedColorView.layer.shadowOpacity = 1
-        selectedColorView.layer.shadowRadius = 5
+        selectedColorView.layer.shadowRadius = 1
         selectedColorView.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
     
@@ -116,7 +116,6 @@ final class SettingsViewController: UIViewController {
 extension SettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        guard let enteredValue = textField.text else { return }
         guard let numberValue = Float(textField.text ?? "0") else { return }
         
         switch textField {
@@ -133,5 +132,7 @@ extension SettingsViewController: UITextFieldDelegate {
         }
         
         setColor()
+        applyStringFormatToAllValueLabels()
+        getValuesForTextFields()
     }
 }
