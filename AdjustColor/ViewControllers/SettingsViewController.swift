@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 final class SettingsViewController: UIViewController {
     
     //MARK: - IBOutlets
@@ -121,9 +120,12 @@ final class SettingsViewController: UIViewController {
 
 //MARK: - UITextFieldDelegate applying values
 extension SettingsViewController: UITextFieldDelegate {
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        guard let numberValue = Float(textField.text ?? "0") else { return }
+        let formattedTF = textField.text?.replacingOccurrences(of: ",", with: ".") ?? "0"
+        
+        guard let numberValue = Float(formattedTF) else { return }
         
         switch textField {
         case redTextField:
