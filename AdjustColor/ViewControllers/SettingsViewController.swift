@@ -123,8 +123,7 @@ extension SettingsViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         
-        let formattedTF = textField.text?.replacingOccurrences(of: ",", with: ".") ?? "0"
-        
+        guard let formattedTF = textField.text?.replacingOccurrences(of: ",", with: ".") else { return }
         guard let numberValue = Float(formattedTF) else { return }
         
         switch textField {
