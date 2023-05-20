@@ -10,7 +10,7 @@ import UIKit
 
 final class SettingsViewController: UIViewController {
     
-    // MARK: - Public properties
+    //MARK: - IBOutlets
     @IBOutlet var selectedColorView: UIView!
     
     @IBOutlet var redValueLabel: UILabel!
@@ -25,6 +25,7 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
     
+    // MARK: - Public properties
     var color: UIColor!
     
     
@@ -40,12 +41,11 @@ final class SettingsViewController: UIViewController {
         redTextField.delegate = self
         greenTextField.delegate = self
         blueTextField.delegate = self
-        
-        
-        
-        
-        
-        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     //MARK: - IBActions
@@ -112,7 +112,7 @@ final class SettingsViewController: UIViewController {
     }
 }
 
-//MARK: - UITextField applying values
+//MARK: - UITextFieldDelegate applying values
 extension SettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         
@@ -134,5 +134,10 @@ extension SettingsViewController: UITextFieldDelegate {
         setColor()
         applyStringFormatToAllValueLabels()
         getValuesForTextFields()
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
     }
 }

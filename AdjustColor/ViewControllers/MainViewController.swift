@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 final class MainViewController: UIViewController {
     
     //MARK: - Life cycle methods
