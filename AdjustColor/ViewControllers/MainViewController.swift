@@ -22,7 +22,7 @@ final class MainViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let settingsVC = segue.destination as? SettingsViewController else { return }
-        settingsVC.color = self.view.backgroundColor
+        settingsVC.viewColor = view.backgroundColor
         settingsVC.delegate = self
     }
 }
